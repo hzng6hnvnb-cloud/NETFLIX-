@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NETFLIX — منصة المشاهدة</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     شريط التنقل
+========================= -->
+
+<header class="navbar" id="navbar">
+
+    <div class="logo">NETFLIX</div>
+
+    <nav class="nav-links">
+        <button data-page="home">الرئيسية</button>
+        <button data-page="movies">الأفلام</button>
+        <button data-page="series">المسلسلات</button>
+        <button data-page="favorites">قائمتي</button>
+    </nav>
+
+    <button class="search-button" id="openSearch">
+        🔍
+    </button>
+
+</header>
+
+
+<!-- =========================
+     التطبيق
+========================= -->
+
+<main>
+
+<!-- الرئيسية -->
+
+<section id="homePage" class="page active">
+
+    <div id="hero"></div>
+
+    <section class="content-section">
+
+        <div class="section-title">
+            <h2>🔥 ترند الآن</h2>
+        </div>
+
+        <div id="trendingRow" class="movie-row"></div>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <div class="section-title">
+            <h2>🏆 أفضل 10 أفلام</h2>
+        </div>
+
+        <div id="topMoviesRow" class="movie-row top-ten"></div>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <div class="section-title">
+            <h2>📺 أشهر 10 مسلسلات</h2>
+        </div>
+
+        <div id="topSeriesRow" class="movie-row top-ten"></div>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <div class="section-title">
+            <h2>▶️ أكمل المشاهدة</h2>
+        </div>
+
+        <div id="continueRow" class="movie-row"></div>
+
+    </section>
+
+</section>
+
+
+<!-- الأفلام -->
+
+<section id="moviesPage" class="page">
+
+    <div class="page-header">
+
+        <h1>الأفلام</h1>
+
+        <p>
+            اختر فيلمك وابدأ المشاهدة
+        </p>
+
+    </div>
+
+    <div id="moviesGrid" class="movie-grid"></div>
+
+</section>
+
+
+<!-- المسلسلات -->
+
+<section id="seriesPage" class="page">
+
+    <div class="page-header">
+
+        <h1>المسلسلات</h1>
+
+        <p>
+            المواسم والحلقات
+        </p>
+
+    </div>
+
+    <div id="seriesGrid" class="movie-grid"></div>
+
+</section>
+
+
+<!-- المفضلة -->
+
+<section id="favoritesPage" class="page">
+
+    <div class="page-header">
+
+        <h1>قائمتي ❤️</h1>
+
+        <p>
+            الأفلام والمسلسلات التي أضفتها
+        </p>
+
+    </div>
+
+    <div id="favoritesGrid" class="movie-grid"></div>
+
+</section>
+
+
+<!-- =========================
+     صفحة تفاصيل المحتوى
+========================= -->
+
+<section id="detailsPage" class="page">
+
+    <div id="detailsContainer"></div>
+
+</section>
+
+
+<!-- =========================
+     صفحة المشاهدة
+========================= -->
+
+<section id="watchPage" class="page">
+
+    <div class="watch-container">
+
+        <button class="back-button" id="backFromWatch">
+            ← رجوع
+        </button>
+
+        <div class="video-wrapper">
+
+            <video
+                id="videoPlayer"
+                playsinline
+                preload="metadata">
+            </video>
+
+        </div>
+
+        <div class="player-controls">
+
+            <button id="rewindButton">
+                ↶ 10 ثواني
+            </button>
+
+            <button id="playButton">
+                ▶ تشغيل
+            </button>
+
+            <button id="forwardButton">
+                10 ثواني ↷
+            </button>
+
+            <button id="fullscreenButton">
+                ⛶ ملء الشاشة
+            </button>
+
+        </div>
+
+        <div class="player-info">
+
+            <h2 id="watchTitle"></h2>
+
+            <p id="watchSubtitle">
+                استمتع بالمشاهدة
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     نافذة البحث
+========================= -->
+
+<div class="search-overlay" id="searchOverlay">
+
+    <div class="search-panel">
+
+        <button
+            class="close-search"
+            id="closeSearch">
+            ×
+        </button>
+
+        <h2>البحث</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="اكتب اسم فيلم أو مسلسل...">
+
+        <div id="searchResults" class="search-results"></div>
+
+    </div>
+
+</div>
+
+
+<!-- رسالة صغيرة -->
+
+<div id="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
